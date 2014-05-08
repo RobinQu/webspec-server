@@ -19,6 +19,8 @@
     "tests"
   ],
   "dependencies": {
-    "jasmine-jsreporter": "~0.1.1"
+    "jasmine-jsreporter": "~0.1.1",
+    "microajax": "~0.3.0",
+    "uuid-js": "~0.7.5"
   }
 }

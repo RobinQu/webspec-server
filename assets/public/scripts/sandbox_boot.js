@@ -1,4 +1,4 @@
-/*global jasmine */
+/*global jasmine, jasmineRequire */
 
 /**
  Starting with version 2.0, this file "boots" Jasmine, performing all of the necessary initialization before executing the loaded environment and all of a project's specs. This file should be loaded after `jasmine.js`, but before any project source files or spec files are loaded. Thus this file can also be used to customize Jasmine for a project.
@@ -11,6 +11,17 @@
  */
 
 (function() {
+  
+  /**
+   * Helper function for readability above.
+   */
+  function extend(destination, source) {
+    for (var property in source) {
+      destination[property] = source[property];
+    }
+    return destination;
+  }
+  
 
   /**
    * ## Require &amp; Instantiate
@@ -75,7 +86,7 @@
   /**
    * Add all of the Jasmine global/public interface to the proper global, so a project can use the public interface directly. For example, calling `describe` in specs instead of `jasmine.getEnv().describe`.
    */
-  if (typeof window == "undefined" && typeof exports == "object") {
+  if (typeof window === "undefined" && typeof exports === "object") {
     extend(exports, jasmineInterface);
   } else {
     extend(window, jasmineInterface);
@@ -109,6 +120,7 @@
   env.addReporter(jasmineInterface.jsApiReporter);
   
   env.addReporter(new jasmineRequire.JSReporter2());
+  env.addReporter(new jasmineRequire.sandboxReporter());
 
   /**
    * Setting up timing functions to be able to be overridden. Certain browsers (Safari, IE 8, phantomjs) require this hack.
@@ -133,13 +145,6 @@
     env.execute();
   };
 
-  /**
-   * Helper function for readability above.
-   */
-  function extend(destination, source) {
-    for (var property in source) destination[property] = source[property];
-    return destination;
-  }
 
 }());
 
