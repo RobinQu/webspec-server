@@ -24,7 +24,8 @@
     "hc": "^0.1.0",
     "superagent": "^0.18.0",
     "orchestrate": "^0.1.2",
-    "node-uuid": "^1.4.1"
+    "node-uuid": "^1.4.1",
+    "superagent-defaults": "^0.1.5"
   },
   "devDependencies": {},
   "scripts": {
