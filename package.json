@@ -22,7 +22,8 @@
     "debug": "^0.8.1",
     "ejs": "^1.0.0",
     "hc": "^0.1.0",
-    "superagent": "^0.18.0"
+    "superagent": "^0.18.0",
+    "orchestrate": "^0.1.2"
   },
   "devDependencies": {},
   "scripts": {
