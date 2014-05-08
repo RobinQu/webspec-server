@@ -1,0 +1,24 @@
+{
+  "name": "webspec-server",
+  "version": "0.0.0",
+  "homepage": "https://github.com/RobinQu/webspec-server",
+  "authors": [
+    "RobinQu <robinqu@gmail.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/public/bower_componets",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jasmine-jsreporter": "~0.1.1"
+  }
+}

@@ -20,7 +20,9 @@
     "install": "^0.1.7",
     "thunkify": "^2.1.1",
     "debug": "^0.8.1",
-    "ejs": "^1.0.0"
+    "ejs": "^1.0.0",
+    "hc": "^0.1.0",
+    "superagent": "^0.18.0"
   },
   "devDependencies": {},
   "scripts": {
