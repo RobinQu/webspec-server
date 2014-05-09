@@ -1,17 +1,15 @@
 /*global jasmine, jasmineRequire */
 
 jasmineRequire.SandboxReporter = function() {
-  
-  this.endpoint = "/reports/";
-  
-  this.getMeta = function() {
-    var repo = document.body.getAttribute("data-repo");
-    return {repo: repo};
-  };
+    
+  // this.getMeta = function() {
+  //   var repo = document.body.getAttribute("data-repo");
+  //   return {repo: repo};
+  // };
   
   this.getReportURL = function() {
     var uuid = window.location.pathname.split("/").pop();//last portion of url pathname
-    var url = this.endpoint + uuid;
+    var url = "/sandboxes/" + uuid + "/reports";
     return url;
   };
   
@@ -46,9 +44,9 @@ jasmineRequire.SandboxReporter = function() {
     if(!text) {
       text = "{\"invalid\":true}";
     }
-    var meta = this.getMeta();
-    var str = "{\"repo\": \"" + meta.repo  + "\",  \"rev\":\"\", \"raw\": "  + text + " }";
-    this.send(str, function() {
+    // var meta = this.getMeta();
+    // var str = "{\"repo\": \"" + meta.repo  + "\",  \"rev\":\"\", \"raw\": "  + text + " }";
+    this.send(text, function() {
       
     });
   };
