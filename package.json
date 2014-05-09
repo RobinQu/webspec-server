@@ -26,7 +26,8 @@
     "orchestrate": "^0.1.2",
     "node-uuid": "^1.4.1",
     "superagent-defaults": "^0.1.5",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "koa-methodoverride": "^0.3.1"
   },
   "devDependencies": {},
   "scripts": {
