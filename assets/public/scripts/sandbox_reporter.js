@@ -2,14 +2,16 @@
 
 jasmineRequire.SandboxReporter = function() {
     
-  // this.getMeta = function() {
-  //   var repo = document.body.getAttribute("data-repo");
-  //   return {repo: repo};
-  // };
+  this.getMeta = function() {
+    var report = document.body.getAttribute("data-report");
+    return {report: report};
+  };
   
   this.getReportURL = function() {
-    var uuid = window.location.pathname.split("/").pop();//last portion of url pathname
-    var url = "/sandboxes/" + uuid + "/reports";
+    var uuid, url, meta;
+    uuid = window.location.pathname.split("/").pop();//last portion of url pathname
+    meta = this.getMeta();
+    url = "/sandboxes/" + uuid + "/reports/" + meta.report;
     return url;
   };
   
@@ -44,8 +46,6 @@ jasmineRequire.SandboxReporter = function() {
     if(!text) {
       text = "{\"invalid\":true}";
     }
-    // var meta = this.getMeta();
-    // var str = "{\"repo\": \"" + meta.repo  + "\",  \"rev\":\"\", \"raw\": "  + text + " }";
     this.send(text, function() {
       
     });
