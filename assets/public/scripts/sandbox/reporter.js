@@ -20,7 +20,8 @@ jasmineRequire.SandboxReporter = function() {
     utils.ajax({
       method: "POST",
       body: text,
-      json: true
+      json: true,
+      url: this.getReportURL()
     }, callback);
   };
   
