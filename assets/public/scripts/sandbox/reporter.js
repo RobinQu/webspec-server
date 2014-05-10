@@ -1,6 +1,8 @@
 /*global jasmine, jasmineRequire */
 
 jasmineRequire.SandboxReporter = function() {
+  
+  var utils = window._SANDBOX_UTILS_;
     
   this.getMeta = function() {
     var report = document.body.getAttribute("data-report");
@@ -15,28 +17,11 @@ jasmineRequire.SandboxReporter = function() {
   };
   
   this.send = function(text, callback) {
-    var xhr = function() {
-      if (window.ActiveXObject) {
-        return new window.ActiveXObject("Microsoft.XMLHTTP");
-      } else if(window.XMLHttpRequest) {
-        return new XMLHttpRequest();
-      }
-      return false;
-    };
-    var req = xhr();
-    
-    if(req) {
-      req.onreadystatechange = function() {
-        if(req.readyState === 4) {
-          callback(null, req.responseText);
-        }
-      };
-      req.open("POST", this.getReportURL(), true);
-      req.setRequestHeader("Content-type", "application/json");
-      req.send(text);
-    } else {
-      callback(new Error("xhr not supported"));
-    }
+    utils.ajax({
+      method: "POST",
+      body: text,
+      json: true
+    }, callback);
   };
   
   this.jasmineDone = function() {
