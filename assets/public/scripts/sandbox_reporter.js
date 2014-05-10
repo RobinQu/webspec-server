@@ -8,10 +8,9 @@ jasmineRequire.SandboxReporter = function() {
   };
   
   this.getReportURL = function() {
-    var uuid, url, meta;
+    var uuid, url;
     uuid = window.location.pathname.split("/").pop();//last portion of url pathname
-    meta = this.getMeta();
-    url = "/sandboxes/" + uuid + "/reports/" + meta.report;
+    url = "/sandboxes/" + uuid + "/reports";
     return url;
   };
   
@@ -41,13 +40,16 @@ jasmineRequire.SandboxReporter = function() {
   };
   
   this.jasmineDone = function() {
+    var text, str, meta;
     // send results 
-    var text = jasmine.getJSReportAsString();
+    text = jasmine.getJSReportAsString();
     if(!text) {
       text = "{\"invalid\":true}";
     }
-    this.send(text, function() {
-      
+    meta = this.getMeta();
+    str = "{\"uuid\":\"" + meta.report + "\",\"raw\":" + text + "}";
+    this.send(str, function() {
+      //do nothing for now
     });
   };
 };
