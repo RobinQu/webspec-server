@@ -26,3 +26,5 @@ node_modules
 
 
 assets/public/bower_components/
+
+*.rdb
