@@ -27,12 +27,16 @@
     "node-uuid": "^1.4.1",
     "superagent-defaults": "^0.1.5",
     "lodash": "^2.4.1",
-    "koa-methodoverride": "^0.3.1"
+    "koa-methodoverride": "^0.3.1",
+    "koa-passport": "^0.3.1",
+    "passport-github": "^0.1.5",
+    "koa-redis": "^0.1.0",
+    "koa-sess": "^0.3.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "jasmine-node spec/",
-    "start": "node --harmony --use_strict lib/app.js"
+    "start": "node --harmony lib/app.js"
   },
   "repository": {
     "type": "git",
