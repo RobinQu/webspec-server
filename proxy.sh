@@ -1,1 +1,0 @@
-http_proxy=localhost:8103 https_proxy=localhost:8103 DEBUG=* npm start
