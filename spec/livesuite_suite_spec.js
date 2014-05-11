@@ -1,7 +1,8 @@
 /*global describe, it, beforeEach, expect, jasmine */
 
 var co = require("co"),
-    assert = require("assert");
+    assert = require("assert"),
+    spechelper = require("./spec_helper");
 
 assert(process.env.NODE_ENV==="test", "should have correct env");
 
@@ -9,7 +10,7 @@ assert(process.env.NODE_ENV==="test", "should have correct env");
 jasmine.getEnv().defaultTimeoutInterval = 10 * 1000;
 
 describe("livesuite.suite", function() {
-  var github, conf, suite, fixtures, clean = false;
+  var env = {}, suite, fixtures;
     
   fixtures = [{
     name: "helloworld",
@@ -18,26 +19,9 @@ describe("livesuite.suite", function() {
   }];
   
   beforeEach(co(function*() {
-    if(!conf) {
-      conf = yield require("hc");
-    }
-    if(!github) {
-      github = require("../lib/services/github")({token: conf.live.token});
-    }
-    if(!clean) {
-      try {
-        yield github.refs.remove({
-          repo: conf.live.repo,
-          ref: "heads/master"
-        });
-      } catch(e) {
-        
-      } finally {
-        clean = true;
-      }
-    }
+    yield spechelper.init(env);
     if(!suite) {
-      suite = require("../lib/services/live")(github).suite;
+      suite = require("../lib/services/live")(env.github).suite;
     }
   }));
   
