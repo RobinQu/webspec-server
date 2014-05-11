@@ -25,7 +25,7 @@ describe("livesuite.suite", function() {
     }
   }));
   
-  describe("suite create", function() {
+  describe("create", function() {
     
     it("should create and get", function(done) {
       co(function*() {
@@ -39,13 +39,13 @@ describe("livesuite.suite", function() {
     
   });
   
-  describe("suite update", function() {
+  describe("update", function() {
     it("should update", function(done) {
       co(function*() {
         var s = yield suite.get(fixtures[0].name);
         var sources = ["http://google.com"];
         s.sources = sources;
-        yield suite.update(s, {name: "robin", email: "a@gmail.com"}, s.sha);
+        yield suite.update(s, {name: "robin", email: "a@gmail.com"});
         s = yield suite.get(fixtures[0].name);
         expect(s.name).toEqual(fixtures[0].name);
         expect(s.sources).toEqual(sources);
@@ -53,7 +53,7 @@ describe("livesuite.suite", function() {
     });
   });
   
-  describe("suite remove", function() {
+  describe("remove", function() {
     it("should remove", function(done) {
       co(function*() {
         var s = yield suite.get(fixtures[0].name);
