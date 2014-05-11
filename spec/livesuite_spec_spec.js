@@ -39,7 +39,7 @@ describe("livesuite.spec", function() {
         yield live.suite.create(suiteData);
         yield live.spec.create(suiteData.name, fixtures[0]);
         var s = yield live.spec.get(suiteData.name, fixtures[0].name);
-        expect(s.content).toEqual(fixtures.content);
+        expect(s.content).toEqual(fixtures[0].content);
       })(done);
     });
   });
@@ -50,7 +50,7 @@ describe("livesuite.spec", function() {
       co(function*() {
         var s = yield live.spec.get(suiteData.name, fixtures[0].name);
         s.content = "false";
-        yield live.suite.update(suiteData.name, s);
+        yield live.spec.update(suiteData.name, s, {name:"robin",email:"a@gmail.com"});
         s = yield live.spec.get(suiteData.name, fixtures[0].name);
         expect(s.content).toEqual("false");
       })(done);
