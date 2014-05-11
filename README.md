@@ -18,6 +18,9 @@ Distributed, living web spec runner and reporter
     * Graphs
 * Runner script
     * realtime runner script
+    * support for more runners，目前只有`jasmine`
+        * mocha
+        * qunit
 * Data Mining for reports
 
 其他的请参考[Issues](https://github.com/RobinQu/webspec-server/issues)。
