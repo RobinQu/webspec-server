@@ -1,0 +1,19 @@
+{
+    "github": {
+        "callbackURL": "http://localhost.com:9090/auth/github/callback",
+        "clientID": "your client id",
+        "clientSecret": "your client secret"
+    },
+    "live": {
+        "repo": "webspec-org/live-test",
+        "token": "your private token"
+    },
+    "orchestrate": {
+        "apikey": "your orchestrate api key"
+    },
+    "redis": {
+      "host": "your redis host",
+      "port": "redis port",
+      "auth": "redis auth"
+    }
+}
