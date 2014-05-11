@@ -2,8 +2,25 @@ webspec
 =======
 Distributed, living web spec runner and reporter
 
-浏览器内Javascript分布式测试平台
+浏览器内Javascript分布式测试平台。
 
+可以简单的理解为把Karma(Tescluar)放到了互联网，让每个互联网用户成为你潜在的测试用户，并将离散的测试报告汇总以便分析总结。
+
+希望给需要在多平台做浏览器测试的同行一点帮助。
+
+## 贡献
+
+欢迎贡献代码！目前主要待改进:
+
+* Web UI
+    * Text Editor
+    * Test runner theme
+    * Graphs
+* Runner script
+    * realtime runner script
+* Data Mining for reports
+
+其他的请参考[Issues](https://github.com/RobinQu/webspec-server/issues)。
 
 ## 依赖
 
@@ -44,6 +61,13 @@ npm start
 NODE_ENV=production npm start
 ```
 
+### 部署
+
+目前还是单节点应用，直接利用`PM2`或者其他脚本运行`lib/app.js`。
+
+`http://webspec.elfvision.com`采用的dokku进行部署，方便快速迭代到线上。
+
+考虑到`/repo`作为github文件代理，访问量会稍大，应该独立出来部署。
 
 ## 概念
 
@@ -52,7 +76,7 @@ NODE_ENV=production npm start
     * 每个人可编辑、运行，只有原作者可删除
     * 每个版本可回溯  
 * .webspec
-    * 将一个github代码库配置为测试代码库。应用会根据代码库根目录的`.webspec`文件中的规则，来加载测试环境（包含runner类型，specs列表，sourcs列表等）。
+    * 将一个github代码库配置为测试代码库。应用会根据代码库根目录的`.webspec`文件中的规则，来加载测试环境（包含runner类型，specs列表，sources列表等）。
 
 ## 接口
 
@@ -79,3 +103,8 @@ NODE_ENV=production npm start
     * GET /auth/github/callback
     * GET /dashboard
     * GET /users/:user
+    
+   
+## License
+
+[MIT](LICENSE)
