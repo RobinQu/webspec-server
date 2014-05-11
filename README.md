@@ -25,6 +25,17 @@ Distributed, living web spec runner and reporter
 
 其他的请参考[Issues](https://github.com/RobinQu/webspec-server/issues)。
 
+## 概念
+
+* Live Suites
+    * 在线可编辑的测试，可包含多个原文件(source)和测试用例(spec)
+    * 每个人可编辑、运行，只有原作者可删除
+    * 每个版本可回溯  
+    * 可被分享、内嵌
+* .webspec
+    * 将一个github代码库配置为测试代码库。应用会根据代码库根目录的`.webspec`文件中的规则，来加载测试环境（包含runner类型，specs列表，sources列表等）。
+    * 可被分享、内嵌
+
 ## 依赖
 
 * 基础设施
@@ -40,16 +51,18 @@ Distributed, living web spec runner and reporter
 
 编写配置文件；参考[samples/config.json](samples/config.json)。
 
-将配置文件放置到服务可访问的HTTP地址上，应用会根据`NODE_ENV`变量访问相应配置文件。
+将配置文件放置到服务可访问的HTTP地址上，应用会根据`CONFIG_URL`变量访问相应配置文件。
 
-例如，配置文件的根路径为`http://yourcompany.com/configs/`，那么当`NODE_ENV`为`test`时，应用会将`http://yourcompany.com/configs/test.json`作为配置文件加载。
+例如，配置文件的根路径为`http://yourcompany.com/config.json`，那么就应该将设置为`CONFIG_URL`为`http://yourcompany.com/config.json`。应用会将`CONFIG_URL`加载配置文件。
+
+如果没有设置`CONFIG_URL`，应用会尝试在本地的`config`目录按照搜寻`$(NODE_ENV).json`。例如，`config/development.json`等。
 
 ### 执行
 
 如果时第一次运行，请先安装依赖：
 
 ```
-npm install
+bower install && npm install
 ```
 
 然后：
@@ -71,15 +84,6 @@ NODE_ENV=production npm start
 `http://webspec.elfvision.com`采用的dokku进行部署，方便快速迭代到线上。
 
 考虑到`/repo`作为github文件代理，访问量会稍大，应该独立出来部署。
-
-## 概念
-
-* Live Suites
-    * 在线可编辑的测试，可包含多个原文件(source)和测试用例(spec)
-    * 每个人可编辑、运行，只有原作者可删除
-    * 每个版本可回溯  
-* .webspec
-    * 将一个github代码库配置为测试代码库。应用会根据代码库根目录的`.webspec`文件中的规则，来加载测试环境（包含runner类型，specs列表，sources列表等）。
 
 ## 接口
 
