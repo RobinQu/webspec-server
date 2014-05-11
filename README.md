@@ -24,6 +24,8 @@ Distributed, living web spec runner and reporter
 
 例如，配置文件的根路径为`http://yourcompany.com/configs/`，那么当`NODE_ENV`为`test`时，应用会将`http://yourcompany.com/configs/test.json`作为配置文件加载。
 
+### 执行
+
 如果时第一次运行，请先安装依赖：
 
 ```
@@ -36,7 +38,12 @@ npm install
 npm start
 ```
 
-程序会默认以开发模式运行（相当于`NODE_ENV=development`）。
+程序会默认以开发模式运行（相当于`NODE_ENV=development`）。建议显示制定`NODE_ENV`，例如在生产环境运行时:
+
+```
+NODE_ENV=production npm start
+```
+
 
 ## 概念
 
