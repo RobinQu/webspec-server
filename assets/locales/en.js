@@ -10,5 +10,8 @@
 	"Write a group fo spec files online. It's suitable for quick demonstrations or proof of concepts when reporting a bug or doing some compatible experiments.": "Write a group fo spec files online. It's suitable for quick demonstrations or proof of concepts when reporting a bug or doing some compatible experiments.",
 	"Create one": "Create one",
 	"Integrated with Github repositories": "Integrated with Github repositories",
-	"Distributed, living spec runner. Crowd-sourcing your tests for borwser Javascript to all Internet users.": "Distributed, living spec runner. Crowd-sourcing your tests for borwser Javascript to all Internet users."
+	"Distributed, living spec runner. Crowd-sourcing your tests for borwser Javascript to all Internet users.": "Distributed, living spec runner. Crowd-sourcing your tests for borwser Javascript to all Internet users.",
+	"Source": "Source",
+	"Issues": "Issues",
+	"License": "License"
 }
