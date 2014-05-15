@@ -16,5 +16,13 @@
 	"License": "License",
 	"Your Test Suites": "Your Test Suites",
 	"Your webspec-enabled repos": "Your webspec-enabled repos",
-	"Enable webspec on one of your repo above": "Enable webspec on one of your repo above"
+	"Enable webspec on one of your repo above": "Enable webspec on one of your repo above",
+	"Select your github repo": "Select your github repo",
+	"No github repo is enabled for webspec": "No github repo is enabled for webspec",
+	"Select your github repo to enable webspec": "Select your github repo to enable webspec",
+	"failed to save repo data: %s": "failed to save repo data: %s",
+	"Suite Name": "Suite Name",
+	"Runner Type": "Runner Type",
+	"Add new source file": "Add new source file",
+	"Add another source file": "Add another source file"
 }
