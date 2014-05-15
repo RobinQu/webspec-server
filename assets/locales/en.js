@@ -24,5 +24,14 @@
 	"Suite Name": "Suite Name",
 	"Runner Type": "Runner Type",
 	"Add new source file": "Add new source file",
-	"Add another source file": "Add another source file"
+	"Add another source file": "Add another source file",
+	"Suite": "Suite",
+	"Author": "Author",
+	"You": "You",
+	"Edit": "Edit",
+	"Run": "Run",
+	"Source files": "Source files",
+	"Name": "Name",
+	"URL": "URL",
+	"Spec files": "Spec files"
 }
