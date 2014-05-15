@@ -30,3 +30,5 @@ assets/public/bower_components/
 *.rdb
 
 config/*.json
+tmp
+logs
