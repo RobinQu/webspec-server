@@ -49,5 +49,9 @@
 	"Test suites %s": "Test suites %s",
 	"Repository": "Repository",
 	"Sources": "Sources",
-	"Specs": "Specs"
+	"Specs": "Specs",
+	"Public suites": "Public suites",
+	"Create suite": "Create suite",
+	"Created by %s": "Created by %s",
+	"%s sources": "%s sources"
 }
