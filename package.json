@@ -4,7 +4,7 @@
   "description": "Distributed spec runner",
   "main": "lib/app.js",
   "engines": {
-    "node": "0.11.10"
+    "node": "0.11.12"
   },
   "dependencies": {
     "koa": "^0.6.0",

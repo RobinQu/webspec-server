@@ -1,1 +1,1 @@
-web: ./node_modules/bower/bin/bower --config.interactive=false --allow-root install && npm start
+web: node_modules/bower/bin/bower --config.interactive=false --allow-root install && NODE_ENV=production npm start
