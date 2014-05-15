@@ -33,5 +33,12 @@
 	"Source files": "Source files",
 	"Name": "Name",
 	"URL": "URL",
-	"Spec files": "Spec files"
+	"Spec files": "Spec files",
+	"New spec file": "New spec file",
+	"Signed in as %s": "Signed in as %s",
+	"Login": "Login",
+	"Login with %s": "Login with %s",
+	"Update Suite %s": "Update Suite %s",
+	"Create": "Create",
+	"Delete": "Delete"
 }
