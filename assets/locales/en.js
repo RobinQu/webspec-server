@@ -13,5 +13,8 @@
 	"Distributed, living spec runner. Crowd-sourcing your tests for borwser Javascript to all Internet users.": "Distributed, living spec runner. Crowd-sourcing your tests for borwser Javascript to all Internet users.",
 	"Source": "Source",
 	"Issues": "Issues",
-	"License": "License"
+	"License": "License",
+	"Your Test Suites": "Your Test Suites",
+	"Your webspec-enabled repos": "Your webspec-enabled repos",
+	"Enable webspec on one of your repo above": "Enable webspec on one of your repo above"
 }
