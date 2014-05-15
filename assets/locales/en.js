@@ -40,5 +40,14 @@
 	"Login with %s": "Login with %s",
 	"Update Suite %s": "Update Suite %s",
 	"Create": "Create",
-	"Delete": "Delete"
+	"Delete": "Delete",
+	"Test Suite %s": "Test Suite %s",
+	"Test Suites Running": "Test Suites Running",
+	"No spec files specified": "No spec files specified",
+	"No source files specified": "No source files specified",
+	"Runner": "Runner",
+	"Test suites %s": "Test suites %s",
+	"Repository": "Repository",
+	"Sources": "Sources",
+	"Specs": "Specs"
 }

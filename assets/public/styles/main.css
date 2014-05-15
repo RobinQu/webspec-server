@@ -1,3 +1,15 @@
+.panel-file-list .panel-body {
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.sandbox-iframe {
+  height: 1px;
+  width: 1px;
+  opacity: 0.1;
+  overflow: hidden;
+}
+
 .footer {
   padding-top: 19px;
   padding-bottom: 20px;
@@ -5,3 +17,4 @@
   border-top: 1px solid #e5e5e5;
   margin-top: 20px;
 }
+
