@@ -55,5 +55,6 @@
 	"Created by %s": "Created by %s",
 	"%s sources": "%s sources",
 	"New Test Suite": "New Test Suite",
-	"All Test Suits": "All Test Suits"
+	"All Test Suits": "All Test Suits",
+	"Repo %s is enabled for webspec": "Repo %s is enabled for webspec"
 }
