@@ -17,4 +17,7 @@
   border-top: 1px solid #e5e5e5;
   margin-top: 20px;
 }
+.CodeMirror {
+  border: 1px solid gray;
+}
 

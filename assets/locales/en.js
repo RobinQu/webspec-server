@@ -56,5 +56,12 @@
 	"%s sources": "%s sources",
 	"New Test Suite": "New Test Suite",
 	"All Test Suits": "All Test Suits",
-	"Repo %s is enabled for webspec": "Repo %s is enabled for webspec"
+	"Repo %s is enabled for webspec": "Repo %s is enabled for webspec",
+	"Filename": "Filename",
+	"Code": "Code",
+	"New Spec File": "New Spec File",
+	"Save": "Save",
+	"Update Spec File %s": "Update Spec File %s",
+	"No source files added": "No source files added",
+	"Manage": "Manage"
 }
