@@ -31,10 +31,13 @@
     var $li;
     
     $li = $("<li />", {
-      text: spec.description,
       id: spec.id,
       "class": "spec"
     });
+    $li.append($("<span />", {
+      text: spec.description,
+      "class": "description"
+    }));
     $parent.append($li);
     return $li;
   };
@@ -43,8 +46,10 @@
     var $exceptionList, i, len, $exception, expand;
     
     this.counts.spec ++;
-    expand = function() {
-      $(this).find("pre").toggle();
+    expand = function(e) {
+      if(e.target.tagName.toLowerCase() !== "pre") {
+        $(this).find("pre").toggle();
+      }
     };
     if(spec.failedExpectations && spec.failedExpectations.length) {
       this.counts.failedSpec ++;
@@ -52,12 +57,15 @@
       $exceptionList = $("<ul />");
       for(i=0,len=spec.failedExpectations.length; i<len; i++) {
         $exception = $("<li />", {
-          text: spec.failedExpectations[i].message,
           "class": "exception",
           on: {
             click: expand
           }
         });
+        $exception.append($("<span />", {
+          text: spec.failedExpectations[i].message,
+          "class": "message"
+        }));
         $exception.append($("<pre />", {
           text: spec.failedExpectations[i].stack,
           style: "display:none"
@@ -65,13 +73,21 @@
         $exceptionList.append($exception);
       }
       $parent.append($exceptionList);
+    } else {
+      $parent.addClass("ok");
     }
     return $parent.closest(".specs");
   };
   
   SpecMaster.prototype.startSuite = function (suite, $parent) {
     var $suite, $specs;
-    $suite = $("<li />", {"class": "suite", "text": suite.description});
+    $suite = $("<li />", {
+      "class": "suite"
+    });
+    $suite.append($("<span />", {
+      "text": suite.description,
+      "class": "description"
+    }));
     $specs = $("<ul />", {"class": "specs"});
     $specs.appendTo($suite);
     $suite.appendTo($parent);
@@ -86,9 +102,9 @@
   SpecMaster.prototype.writeSummary = function () {
     var $summary = $("<div />", {
       "class":  this.counts.failedSpec ? "alert alert-danger" : "alert alert-success",
-      text: this.counts.suite + " suites, " + this.counts.spec + "; " + this.counts.failedSpec + " failed"
+      text: "Runned: " + this.counts.suite + " suites, " + this.counts.spec + " specs; \n Failed: " + this.counts.failedSpec + " specs"
     });
-    this.$container.append($summary);
+    this.$container.prepend($summary);
   };
   
   SpecMaster.prototype.hanldeMessageEvent = function (e) {

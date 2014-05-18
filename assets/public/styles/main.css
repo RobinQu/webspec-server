@@ -21,3 +21,14 @@
   border: 1px solid gray;
 }
 
+.sandbox-result .ok .description {
+  color: green;
+}
+
+.sandbox-result .failed .description {
+  color: #e73b29;
+}
+
+.sandbox-result .exception .message {
+  cursor: pointer;
+}
