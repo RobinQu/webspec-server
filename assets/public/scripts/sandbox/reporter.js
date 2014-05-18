@@ -28,7 +28,15 @@ jasmineRequire.SandboxReporter = function() {
   this.syncToParent = function(update) {
     var win = window.parent;
     if(win) {
-      win.postMessage(update, window.location.origin);
+      if(win.postMessage) {
+        win.postMessage(update, window.location.origin);
+      } else if(win.__MASTER_HOOK__) {
+        win.__MASTER__HOOK__.call(null, {//mimick message event
+          data: update,
+          source: window,
+          origin: window.location.origin
+        });
+      }
     }
   };
   
@@ -75,6 +83,9 @@ jasmineRequire.SandboxReporter = function() {
       text = "{\"invalid\":true}";
     }
     meta = this.getMeta();
+    if(!meta.report) {//skip
+      return;
+    }
     str = "{\"uuid\":\"" + meta.report + "\",\"raw\":" + text + "}";
     this.send(str, function() {
       //do nothing for now
