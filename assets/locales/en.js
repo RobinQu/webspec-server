@@ -64,5 +64,8 @@
 	"Update Spec File %s": "Update Spec File %s",
 	"No source files added": "No source files added",
 	"Manage": "Manage",
-	"See your all test suits": "See your all test suits"
+	"See your all test suits": "See your all test suits",
+	"See all your test suits": "See all your test suits",
+	"Repo": "Repo",
+	"View": "View"
 }
