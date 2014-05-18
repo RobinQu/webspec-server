@@ -31,4 +31,5 @@
 
 .sandbox-result .exception .message {
   cursor: pointer;
+  text-decoration: underline;
 }

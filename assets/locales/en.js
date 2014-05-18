@@ -63,5 +63,6 @@
 	"Save": "Save",
 	"Update Spec File %s": "Update Spec File %s",
 	"No source files added": "No source files added",
-	"Manage": "Manage"
+	"Manage": "Manage",
+	"See your all test suits": "See your all test suits"
 }
