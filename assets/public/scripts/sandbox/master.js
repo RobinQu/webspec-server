@@ -98,7 +98,7 @@
     var update, $currentParent, detail;
     update = e.data;
     $currentParent = this.$currentParent;
-    console.log(update);
+    // console.log(update);
     detail = update.detail;
     switch(update.type) {
     case "spec:start":
