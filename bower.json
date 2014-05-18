@@ -21,6 +21,7 @@
   "dependencies": {
     "jasmine-jsreporter": "~0.1.1",
     "bootstrap": "~3.1.1",
-    "codemirror": "~4.1.0"
+    "codemirror": "~4.1.0",
+    "components-jasmine": "~2.0.0"
   }
 }

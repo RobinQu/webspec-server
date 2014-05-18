@@ -25,7 +25,49 @@ jasmineRequire.SandboxReporter = function() {
     }, callback);
   };
   
+  this.syncToParent = function(update) {
+    var win = window.parent;
+    if(win) {
+      win.postMessage(update, window.location.origin);
+    }
+  };
+  
+  this.suiteStarted = function(suite) {
+    this.syncToParent({
+      type: "suite:start",
+      detail: suite
+    });
+  };
+  
+  this.suiteDone = function(suite) {
+    this.syncToParent({
+      type: "suite:done",
+      detail: suite
+    });
+  };
+  
+  this.specStarted = function(spec) {
+    this.syncToParent({
+      type: "spec:start",
+      detail: spec
+    });
+  };
+  
+  this.specDone = function(spec) {
+    this.syncToParent({
+      type: "spec:done",
+      detail: spec
+    });
+  };
+  
+  
+  
   this.jasmineDone = function() {
+    this.syncToParent({
+      type: "jasmine:done"
+    });
+    
+    
     var text, str, meta;
     // send results 
     text = jasmine.getJSReportAsString();
