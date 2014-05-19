@@ -68,5 +68,14 @@
 	"See all your test suits": "See all your test suits",
 	"Repo": "Repo",
 	"View": "View",
-	"Your Latest Test Suites": "Your Latest Test Suites"
+	"Your Latest Test Suites": "Your Latest Test Suites",
+	"Recent Revisions": "Recent Revisions",
+	"Reports for all revisions": "Reports for all revisions",
+	"No spec files added": "No spec files added",
+	"Revision": "Revision",
+	"Revisions": "Revisions",
+	"Jump to revision": "Jump to revision",
+	"Current": "Current",
+	"View detail of %s": "View detail of %s",
+	"Reports for Rev %s": "Reports for Rev %s"
 }

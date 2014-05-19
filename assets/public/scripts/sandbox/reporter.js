@@ -6,7 +6,9 @@ jasmineRequire.SandboxReporter = function() {
     
   this.getMeta = function() {
     var report = document.body.getAttribute("data-report");
-    return {report: report};
+    var ref = document.body.getAttribute("data-ref");
+    
+    return {report: report, ref: ref};
   };
   
   this.getReportURL = function() {
@@ -68,8 +70,6 @@ jasmineRequire.SandboxReporter = function() {
     });
   };
   
-  
-  
   this.jasmineDone = function() {
     this.syncToParent({
       type: "jasmine:done"
@@ -86,7 +86,7 @@ jasmineRequire.SandboxReporter = function() {
     if(!meta.report) {//skip
       return;
     }
-    str = "{\"uuid\":\"" + meta.report + "\",\"raw\":" + text + "}";
+    str = "{\"uuid\":\"" + meta.report + "\",\"commit\": \""+ meta.ref +"\", \"raw\":" + text + "}";
     this.send(str, function() {
       //do nothing for now
     });
