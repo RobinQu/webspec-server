@@ -67,5 +67,6 @@
 	"See your all test suits": "See your all test suits",
 	"See all your test suits": "See all your test suits",
 	"Repo": "Repo",
-	"View": "View"
+	"View": "View",
+	"Your Latest Test Suites": "Your Latest Test Suites"
 }
