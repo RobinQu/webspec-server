@@ -78,5 +78,6 @@
 	"Current": "Current",
 	"View detail of %s": "View detail of %s",
 	"Reports for Rev %s": "Reports for Rev %s",
-	"Loading report data": "Loading report data"
+	"Loading report data": "Loading report data",
+	"Seems this tests have never runned before": "Seems this tests have never runned before"
 }
