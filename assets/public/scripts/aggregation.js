@@ -1,4 +1,4 @@
-/*global jQuery, alert, _ */
+/*global jQuery, _ */
 
 (function(win, $) {
   var markup = function($box, result) {
@@ -16,9 +16,9 @@
       return v;
     });
     //find commits
-    table.commits = _.pluck(data, "commit");
+    table.commits = _.uniq(_.pluck(data, "commit"));
     //find browsers
-    table.browsers = _.sortBy(_.pluck(data, "borwser"), "browser");
+    table.browsers = _.sortBy(_.pluck(data, "browser"), "browser");
     table.rows =  _.map(table.commits, function(commit) {
       return _.sortBy(_.filter(data, {commit: commit}), "browser");
     });
@@ -29,10 +29,15 @@
     var $reportCard = $(this);
     // $reportCard.load("/data", $reportCard.data());
     $.getJSON("/data", $reportCard.data()).done(function(data) {
-      var result = normallize(data.result);
-      markup($reportCard, result);
+      var result;
+      if(data && data.length) {
+        result = normallize(data);
+        markup($reportCard, result);
+      } else {
+        $reportCard.html("<div class='alert alert-danger'>No report data found</div>");
+      }
     }).fail(function() {
-      alert("fail to load data");
+      $reportCard.html("<div class='alert alert-danger'>Failed to load data</div>");
     });
   });
 }(window, jQuery));
