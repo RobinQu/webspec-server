@@ -7,7 +7,8 @@ Match a sandbox
 ```
 {
   $match: {
-    $sandbox: <sandbox id value>
+    "$sandbox.ref": <ref value>
+    "$sandbox.type": <type>
   }
 }
 ```

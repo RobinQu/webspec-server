@@ -77,5 +77,6 @@
 	"Jump to revision": "Jump to revision",
 	"Current": "Current",
 	"View detail of %s": "View detail of %s",
-	"Reports for Rev %s": "Reports for Rev %s"
+	"Reports for Rev %s": "Reports for Rev %s",
+	"Loading report data": "Loading report data"
 }
