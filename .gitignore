@@ -27,6 +27,8 @@ node_modules
 
 assets/public/bower_components/
 
+db/*
+
 *.rdb
 
 config/*.json
